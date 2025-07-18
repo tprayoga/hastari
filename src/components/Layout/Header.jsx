@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Building } from "lucide-react";
+import logo from "./logo.png"; // Adjust the path to your logo image
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +17,12 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-red-600 shadow-md sticky top-0 z-50">
+    <header className="bg-[#B41515] shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Building className="h-8 w-8 text-white" />
-            <span className="text-xl font-bold text-white">PT Indonesia Maju</span>
+            <img src={logo} alt="Logo" className="h-15 w-40" />
           </Link>
 
           {/* Desktop Navigation */}

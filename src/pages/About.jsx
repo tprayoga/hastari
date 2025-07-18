@@ -1,7 +1,7 @@
-import React from 'react';
-import HeroCarousel from '../components/Carousel/HeroCarousel';
-import { companyData } from '../data/mockData';
-import { History, Eye, Target, Award } from 'lucide-react';
+import React from "react";
+import HeroCarousel from "../components/Carousel/HeroCarousel";
+import { companyData } from "../data/mockData";
+import { History, Eye, Target, Award } from "lucide-react";
 
 const About = () => {
   const aboutSlides = [
@@ -9,14 +9,14 @@ const About = () => {
       id: 1,
       image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
       title: "Tentang Kami",
-      subtitle: "Mengenal lebih dekat perjalanan dan nilai-nilai perusahaan"
+      subtitle: "Mengenal lebih dekat perjalanan dan nilai-nilai perusahaan",
     },
     {
       id: 2,
       image: "https://images.pexels.com/photos/3184463/pexels-photo-3184463.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
       title: "Komitmen Kualitas",
-      subtitle: "Dedikasi untuk memberikan yang terbaik dalam setiap layanan"
-    }
+      subtitle: "Dedikasi untuk memberikan yang terbaik dalam setiap layanan",
+    },
   ];
 
   return (
@@ -30,14 +30,10 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <div className="flex items-center justify-center mb-4">
-                <History className="h-10 w-10 text-red-600 mr-3" />
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  {companyData.company.history.title}
-                </h2>
+                {/* <History className="h-10 w-10 text-red-600 mr-3" /> */}
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{companyData.company.history.title}</h2>
               </div>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                {companyData.company.history.content}
-              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">{companyData.company.history.content}</p>
             </div>
 
             {/* Timeline */}
@@ -68,9 +64,7 @@ const About = () => {
                 <Eye className="h-10 w-10 text-red-600 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">Visi</h3>
               </div>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                {companyData.company.vision}
-              </p>
+              <p className="text-gray-700 text-lg leading-relaxed">{companyData.company.vision}</p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="flex items-center mb-6">
@@ -96,13 +90,9 @@ const About = () => {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
               <Award className="h-10 w-10 text-red-600 mr-3" />
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Nilai-Nilai Perusahaan
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Nilai-Nilai Perusahaan</h2>
             </div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Nilai-nilai yang menjadi fondasi dalam setiap langkah dan keputusan perusahaan
-            </p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Nilai-nilai yang menjadi fondasi dalam setiap langkah dan keputusan perusahaan</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {companyData.company.values.map((value, index) => (
@@ -110,12 +100,8 @@ const About = () => {
                 <div className="bg-red-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-100 transition-colors">
                   <Award className="h-10 w-10 text-red-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">
-                  {value.description}
-                </p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
           </div>
