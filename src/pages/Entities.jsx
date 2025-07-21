@@ -1,22 +1,75 @@
-import React from 'react';
-import HeroCarousel from '../components/Carousel/HeroCarousel';
-import { companyData } from '../data/mockData';
-import { Building } from 'lucide-react';
+import React from "react";
+import HeroCarousel from "../components/Carousel/HeroCarousel";
+import { companyData } from "../data/mockData";
+import { Building } from "lucide-react";
+import tk1 from "./tentang1.jpg";
+import bpn from "./BPN.jpg";
+import ham from "./HAM.jpg";
+import hap from "./HAP.jpg";
+import hjb from "./HJB.jpg";
+import hjs from "./HJS.jpg";
+import hne from "./HNE.jpg";
+import hpa from "./HPA.jpg";
+const CompanyCard = ({ name, image, link }) => (
+  <div className="group overflow-hidden rounded-lg shadow-md transition duration-300">
+    <div className="relative">
+      <img src={image} alt={name} className="w-full h-56 object-cover filter grayscale group-hover:grayscale-0 transition duration-500 ease-in-out" />
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-700 via-red-600/80 to-transparent text-white px-4 py-3">
+        <h3 className="font-bold text-sm md:text-base">{name}</h3>
+        <a href={link} className="text-sm mt-1 inline-flex items-center gap-1 text-white hover:underline">
+          Selengkapnya
+          <span className="text-white text-base">⟶</span>
+        </a>
+      </div>
+    </div>
+  </div>
+);
 
 const Entities = () => {
   const entitiesSlides = [
     {
       id: 1,
-      image: "https://images.pexels.com/photos/3184430/pexels-photo-3184430.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
-      title: "Entitas Bisnis",
-      subtitle: "Jaringan perusahaan yang saling mendukung untuk mencapai visi bersama"
+      image: tk1,
+      title: "Entitas Hastari Corp",
+      subtitle: "Jaringan perusahaan yang saling mendukung untuk mencapai visi bersama",
+    },
+  ];
+  const companies = [
+    {
+      name: "PT. Hastari Jaya Sentosa",
+      image: hjs, // Ganti dengan path gambar asli
+      link: "#",
     },
     {
-      id: 2,
-      image: "https://images.pexels.com/photos/3184434/pexels-photo-3184434.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
-      title: "Sinergi Berkelanjutan",
-      subtitle: "Kolaborasi antar entitas untuk memberikan solusi menyeluruh"
-    }
+      name: "PT. Hastari Abhipraya Prima",
+      image: hap, // Ganti dengan path gambar asli
+      link: "#",
+    },
+    {
+      name: "Hastari Nawasena Energi",
+      image: hne, // Ganti dengan path gambar asli
+      link: "#",
+    },
+    {
+      name: "PT. Hastari Perkaya Anugerah",
+      image: hpa, // Ganti dengan path gambar asli
+      link: "#",
+    },
+    {
+      name: "PT. Bodha Padma Nawadhya",
+      image: bpn, // Ganti dengan path gambar asli
+      link: "#",
+    },
+    {
+      name: "PT. Hastari Alam Makmur",
+      image: ham, // Ganti dengan path gambar asli
+      link: "#",
+    },
+    {
+      name: "PT. Hastari Jeriji Bersatu",
+      image: hjb, // Ganti dengan path gambar asli
+      link: "#",
+    },
   ];
 
   return (
@@ -25,7 +78,7 @@ const Entities = () => {
       <HeroCarousel slides={entitiesSlides} height="h-96" />
 
       {/* Entities Section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
@@ -62,50 +115,14 @@ const Entities = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Organization Chart Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Struktur Organisasi
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Hubungan struktural antar entitas dalam grup perusahaan
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            {/* Parent Company */}
-            <div className="text-center mb-8">
-              <div className="bg-red-600 text-white rounded-lg p-6 inline-block">
-                <h3 className="text-xl font-semibold">PT Indonesia Maju</h3>
-                <p className="text-red-100">Holding Company</p>
-              </div>
-            </div>
-
-            {/* Connecting Lines */}
-            <div className="flex justify-center mb-8">
-              <div className="w-px h-8 bg-gray-400"></div>
-            </div>
-
-            {/* Subsidiaries */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {companyData.entities.map((entity) => (
-                <div key={entity.id} className="text-center">
-                  <div className="bg-white border-2 border-red-600 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">
-                      {entity.name}
-                    </h4>
-                    <p className="text-sm text-gray-600">
-                      Subsidiary
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <section className="py-16 px-4 md:px-16 lg:px-32 bg-white">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          {companies.map((company, idx) => (
+            <CompanyCard key={idx} name={company.name} image={company.image} link={company.link} />
+          ))}
         </div>
       </section>
     </div>

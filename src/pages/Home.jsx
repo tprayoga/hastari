@@ -1,7 +1,7 @@
 import React from "react";
 import HeroCarousel from "../components/Carousel/HeroCarousel";
 import { companyData } from "../data/mockData";
-import { ArrowRight, Eye, Target, Award, Calendar } from "lucide-react";
+import { ArrowRight, Eye, Target, Award, Calendar, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import hero1 from "./hero1.png";
 import hero2 from "./hero2.png";
@@ -45,34 +45,9 @@ const Home = () => {
       <HeroCarousel slides={companyData.hero.slides} height="h-screen" />
       <div className="bg-white">
         {/* Section: Company Overview */}
-        <div className="flex flex-col lg:flex-row items-center justify-center p-8 lg:p-16 max-w-7xl mx-auto">
-          {/* Gambar Kiri */}
-          <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
-            <img src={hero1} alt="Tim Hastari Corp" className="rounded-xl shadow-md w-full object-cover" />
-          </div>
-
-          {/* Konten Kanan */}
-          <div className="w-full lg:w-1/2 lg:pl-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">Hastari Corp</h1>
-            <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              Hastari Corp telah berkembang selama bertahun-tahun dengan beberapa sektor bisnis prioritas yang terintegrasi dan berhasil memperkuat kemampuannya dengan memberikan solusi bernilai tambah bagi pelanggan dengan meningkatkan
-              kemampuan, aset, dan kualitas untuk membawa perbaikan dan pertumbuhan berkelanjutan bagi perusahaan.
-            </p>
-            <a
-              href="/files/company-profile.pdf" // Ganti sesuai lokasi file PDF kamu
-              className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-lg font-medium py-3 px-6 rounded-full transition duration-300"
-              download
-            >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v12a1 1 0 01-1 1H6.414l-4 4V3z" clipRule="evenodd" />
-              </svg>
-              Unduh Company Profile
-            </a>
-          </div>
-        </div>
 
         {/* Section: Visi dan Misi */}
-        <div className="bg-[#B41515] py-14 px-6 md:px-10 text-white">
+        <div className="bg-white py-14 px-6 md:px-10 text-white">
           <div className="max-w-7xl mx-auto rounded-xl overflow-hidden shadow-lg flex flex-col lg:flex-row bg-[#991010]">
             {/* Kiri: Konten Visi & Misi */}
             <div className="w-full lg:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
@@ -133,7 +108,7 @@ const Home = () => {
       </section> */}
 
       {/* Latest News Section */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Berita Terkini</h2>
@@ -159,40 +134,77 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
-      <div className="bg-white">
-        {/* Core Value Section */}
-        <div className="relative bg-cover bg-center h-[300px] flex items-center justify-center" style={{ backgroundImage: `url(${coreBg})` }}></div>
-        {/* <div className="flex flex-col items-center justify-center p-4 bg-white rounded-full shadow-lg border-2 border-gray-200 w-24 h-24">
-          {coreIcons.map((word, index) => (
-            <image src={word} width="40" height="40" />
-          ))} */}
-        {/* <div className="text-xs font-medium text-red-700 mt-1 text-center leading-tight">
-            <div key={index}>{word}</div>
-          </div> */}
-        {/* </div> */}
-        {/* Core Icons */}
-        {/* Core Value Section */}
-        {/* Icon Carousel */}
-        {/* Entitas Section */}
-        <div className="max-w-7xl mx-auto px-6 py-10">
-          <h3 className="text-3xl font-bold text-red-700 mb-8">Entitas Hastari Corp</h3>
+      </section> */}
+      {/* Latest Updates */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Latest News */}
+            <div>
+              <div className="flex items-center mb-6">
+                <Calendar className="h-6 w-6 text-red-600 mr-2" />
+                <h3 className="text-2xl font-bold text-gray-900">Berita Terbaru</h3>
+              </div>
 
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {entities.map((item, index) => (
-              <div key={index} className="group rounded-xl overflow-hidden shadow-md relative cursor-pointer hover:shadow-xl transition">
-                <img src={item.image} alt={item.name} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-red-700/90 via-red-500/30 to-transparent px-4 py-3 flex flex-col justify-end">
-                  <h4 className="text-white text-lg font-semibold drop-shadow-md">{item.name}</h4>
-                  <a href={item.link} className="text-white text-sm font-medium flex items-center gap-1 mt-1 hover:underline">
-                    Selengkapnya <span>→</span>
-                  </a>
+              <div className="space-y-4">
+                <div className="border-l-4 border-red-600 pl-4 py-2">
+                  <h4 className="font-semibold text-gray-900">Ekspansi Bisnis ke Sektor Digital</h4>
+                  <p className="text-gray-600 text-sm">15 Januari 2025</p>
+                  <p className="text-gray-700 mt-2">PT Nusantara mengumumkan rencana ekspansi...</p>
+                </div>
+
+                <div className="border-l-4 border-red-600 pl-4 py-2">
+                  <h4 className="font-semibold text-gray-900">Penghargaan Corporate Social Responsibility</h4>
+                  <p className="text-gray-600 text-sm">10 Januari 2025</p>
+                  <p className="text-gray-700 mt-2">Meraih pengakuan atas komitmen terhadap...</p>
+                </div>
+
+                <div className="border-l-4 border-red-600 pl-4 py-2">
+                  <h4 className="font-semibold text-gray-900">Kerjasama Strategis dengan BUMN</h4>
+                  <p className="text-gray-600 text-sm">5 Januari 2025</p>
+                  <p className="text-gray-700 mt-2">Menjalin partnership untuk proyek nasional...</p>
                 </div>
               </div>
-            ))}
+
+              <a href="/media" className="inline-block mt-6 text-red-600 hover:text-red-700 font-semibold">
+                Lihat Semua Berita →
+              </a>
+            </div>
+
+            {/* Job Opportunities */}
+            <div>
+              <div className="flex items-center mb-6">
+                <Briefcase className="h-6 w-6 text-red-600 mr-2" />
+                <h3 className="text-2xl font-bold text-gray-900">Lowongan Kerja</h3>
+              </div>
+
+              <div className="space-y-4">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-900">Senior Software Engineer</h4>
+                  <p className="text-gray-600 text-sm">Jakarta • Full Time</p>
+                  <p className="text-gray-700 mt-2">Mengembangkan sistem digital inovatif...</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-900">Business Development Manager</h4>
+                  <p className="text-gray-600 text-sm">Jakarta • Full Time</p>
+                  <p className="text-gray-700 mt-2">Mengidentifikasi peluang bisnis baru...</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-gray-900">Financial Analyst</h4>
+                  <p className="text-gray-600 text-sm">Jakarta • Full Time</p>
+                  <p className="text-gray-700 mt-2">Melakukan analisis keuangan dan investasi...</p>
+                </div>
+              </div>
+
+              <a href="/career" className="inline-block mt-6 text-red-600 hover:text-red-700 font-semibold">
+                Lihat Semua Lowongan →
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       {/* Career Highlight Section */}
       {/* <section className="py-16 bg-[#B41515] text-white">
         <div className="container mx-auto px-4">
