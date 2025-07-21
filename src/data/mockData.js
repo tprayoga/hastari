@@ -1,6 +1,6 @@
 // Mock data for the w
 import lp1 from "./lp_1.jpg";
-import lp2 from "./lp_2.JPG";
+import lp2 from "./lp_2.jpg";
 import lp3 from "./lp_3.jpg";
 import lp4 from "./lp_4.jpeg";
 export const companyData = {
